@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperStore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <main class="auth-wrapper">
+        <h2 class="titulo-principal" id="titulo-principal">Iniciar Sesión</h2>
+        
+        <!-- Login Form -->
+        <form id="login-form" class="login-form">
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" id="boton-login" class="boton-menu boton-login" href="index.html">Iniciar Sesión</button>
+        </form>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const botonLogin = document.getElementById('boton-login');
+        
+                botonLogin.addEventListener("click", function loginUser(event) {
+                    event.preventDefault(); // Prevenir el envío del formulario
+        
+                    // Tu lógica de autenticación aquí...
+        
+                    // Simulación de inicio de sesión exitoso
+                    const loginSuccessful = true;
+        
+                    if (loginSuccessful) {
+                        // Almacenar información de inicio de sesión en localStorage
+                        localStorage.setItem("isLoggedIn", true);
+        
+                        // Redirigir al usuario a la página principal
+                        window.location.href = "index.html";
+                    }
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>
